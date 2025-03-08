@@ -14,7 +14,6 @@ const FlightAnalyzer = () => {
     depTime: "",
     arrTime: "",
     distance: "",
-    ticketPrice: ""
   });
   const [showPrediction, setShowPrediction] = useState(false);
   const [prediction, setPrediction] = useState("");
@@ -90,12 +89,6 @@ const FlightAnalyzer = () => {
       type: "text",
       icon: <span className="text-gray-500">✈️</span>
     },
-    {
-      name: "ticketPrice",
-      label: "Ticket Price ($)",
-      type: "number",
-      icon: <span className="text-gray-500">💲</span>
-    }
   ];
 
   const routeFields = [
@@ -392,20 +385,6 @@ const FlightAnalyzer = () => {
                     <div
                       className="h-5 bg-[#dd0000]"
                       style={{ width: prediction.includes("not") ? "30%" : "90%" }}
-                    ></div>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-sm font-medium text-black">Price Analysis</span>
-                    <span className="text-sm font-medium text-black">
-                      {formData.ticketPrice > 500 ? "High price point" : "Competitive price"}
-                    </span>
-                  </div>
-                  <div className="w-full bg-gray-200 h-5">
-                    <div
-                      className="h-5 bg-[#dd0000]"
-                      style={{ width: formData.ticketPrice > 500 ? "40%" : "80%" }}
                     ></div>
                   </div>
                 </div>
